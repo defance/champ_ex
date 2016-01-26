@@ -14,4 +14,5 @@ XQUEUE_URLS = {
     'login': '/login/',
     'get_len': '/get_queuelen/',
     'get_submission': '/get_submission/',
+    'put_result': '/put_result/',
 }

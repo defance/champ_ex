@@ -40,9 +40,9 @@ def get_submission(session, queue_name):
 
 def put_result(session, queue_name, data):
 
-    url_get_len = settings.XQUEUE_INTERFACE['url'] + settings.XQUEUE_URLS['put_result']
+    url_put_result = settings.XQUEUE_INTERFACE['url'] + settings.XQUEUE_URLS['put_result']
 
-    return utils.xqueue_post(session, url_get_len, {'queue_name': queue_name})
+    return utils.xqueue_post(session, url_put_result, data)
 
 
 

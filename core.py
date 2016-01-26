@@ -9,8 +9,19 @@ def grade(student_response, grader_payload):
     информацию для грэйдера (например, внутренний идентификатор задания в
     рамках оценивающей платформы).
 
-    :param student_response: Ответ пользователя
-    :param grader_payload: Нагрузка для оценивания
+    В качестве примера мы будет проверять, входит ли определённая подсторка в
+    пользовательский ответ. Если да -- задание выполнено верно.
+
+    :param student_response: Ответ пользователя (str)
+    :param grader_payload: Нагрузка для оценивания (str)
     :return: tuple (оценка, сообщение)
     """
-    pass
+
+    student_response = student_response.strip()
+    grader_payload = grader_payload.strip()
+
+    if grader_payload not in student_response.decode('utf-8'):
+        return 0, "Задание выполнено неверно"
+
+    return 1, "Задание выполнено верно"
+
